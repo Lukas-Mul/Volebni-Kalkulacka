@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="1_video_style.css" />
+    <title>VIDEO - Pomožme slepicím</title>
+  </head>
+  <body>
+    
+        <video autoplay="autoplay" class="video" id="video" src="video.mp4"></video>
+     
+
+    <div class="content">
+            <button id="myBtn" onclick="replay()">Replay</button>
+            <button id="myBtn" onclick="skip()">Skip</button>
+    </div>
+
+<script type="text/javascript">
+      let video = document.getElementById("video");
+      let btn = document.getElementById("myBtn");
+
+      function replay() {
+      video.currentTime = 0;
+      video.play();
+      }
+      
+      function skip() {
+      video.currentTime = 1000;
+      video.play();
+      }
+
+      video.addEventListener("ended", function () {
+      location.href = "./game.html";
+
+    
+      });
+</script>
+  </body>
+</html>

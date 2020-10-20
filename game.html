@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Volební kalkulačka</title>
+    <link rel="stylesheet" href="./2_intro_style.css" />
+  </head>
+  <body>
+    <div class="container-intro">
+      <div id="game" class="justify-center flex-column">
+        <div class="question-container">
+        <h2 id="question">Jste žena?</h2>
+        </div>
+        <div class="answer-container">
+        <div class="choice-container">
+          <!-- <p class="choice-prefix">A</p> -->
+          <p class="choice-text" data-number="1">Ano</p>
+        </div>
+        <div class="choice-container choice-container-red">
+          <!-- <p class="choice-prefix">B</p> -->
+          <p class="choice-text" data-number="2">Ne</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <script src="./gameGender.js"></script>
+    <script type="text/javascript">
+      resetButton.classList.add("hidden");
+      </script>
+    
+  </body>
+</html>

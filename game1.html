@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Volební kalkulačka</title>
+    <!-- <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="game.css" /> -->
+    <link rel="stylesheet" href="2_intro_style.css" />
+  </head>
+  <body>
+    <div id="explanation1" class="hidden5">
+      <div id="explanation1-flex">
+        <p class="vysvetlivka1">
+          Ženy bojovaly za svá politická a občanská práva od druhé poloviny 19. století.
+          O možnost volit se významně zasazovala například Alice Masaryková a Františka Plamínková.
+          V roce 1873 bylo volební právo některým ženám přiznáno. Mělo však svoje specifika: tyto ženy musely vlastnit velkostatek a samotná volba probíhala pomocí zástupce. Reálně tedy nebylo mnoho těch, které by mohly něco změnit.
+        </p>
+      </div>
+    </div>
+    <div id="explanation2" class="hidden7">
+      <div id="explanation2-flex">
+        <p class="vysvetlivka1">
+          Karel Kramář byl český politik, rusofil a člen mladočeské strany, do které vstoupil roku 1890 spolu s Tomášem G. Masarykem a Josefem Kaizlem.
+          Ve straně zastával realistický, umírněný proud a podporoval aktivní parlamentní politiku. V roce 1897 byl zvolen jejím předsedou.
+          Agitoval ve prospěch reformy, usiloval o zavedení rovného a všeobecného volebního práva. Po jeho odsouhlasení dohlížel na rychlou proměnu a fungování strany, aby v následujících volbách obstála.
+        </p>
+      </div>
+    </div>
+    <div id="hideAll" class="container-intro">
+      <div id="game" class="justify-center flex-column hidden3">
+        
+        <div class="question-container">
+          
+        <h2 id="question">Souhlasíte s tím, že bylo zavedeno všeobecné volební právo? Volit bucou moci nyní všichni muži starší 24 let a do parlamentu mohou být zvoleni, když dovrší 30 let věku. Končí omezení volebního práva majetkem nebo původem.</h2>
+        <div id="progressBar">
+          <div id="progressBarFull"></div>
+        </div>
+      </div>
+      <!-- pri posledni otazce to prida class last-question-container -->
+      <div id="last-answer" class="answer-container">
+        <div class="choice-container">
+          <!-- <p class="choice-prefix">A</p> -->
+          <p class="choice-text" data-number="1">Ano</p>
+        </div>
+        <div class="choice-container choice-container-red">
+          <!-- <p class="choice-prefix">B</p> -->
+          <p class="choice-text" data-number="2">Ne</p>
+        </div>
+        <div class="choice-container hidden">
+          <!-- <p class="choice-prefix">C</p> -->
+          <p class="choice-text" data-number="3">Choice 3</p>
+        </div>
+        <div class="choice-container hidden">
+          <!-- <p class="choice-prefix">D</p> -->
+          <p class="choice-text" data-number="4">Choice 4</p>
+        </div>
+        <div class="choice-container hidden">
+          <!-- <p class="choice-prefix">D</p> -->
+          <p class="choice-text" data-number="5">Choice 5</p>
+        </div>
+      </div>
+      </div>
+
+
+      <div id="endGameId" class="justify-center flex-column outcome hidden2 ">
+        <h2 id="partiesId">Nejvíce jste souhlasili s</h2>
+        <div class="parties-container">
+          <div class="parties-text" data-number="1">Party 1</div>
+          <div class="parties-text" data-number="2">Party 2</div>
+          <div class="parties-text" data-number="3">Party 3</div>
+          <div class="parties-text" data-number="4">Party 4</div>
+          <div class="parties-text" data-number="5">Party 5</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="./game1.js"></script>
+    <!-- <script type="text/javascript">
+      resetButton.classList.add("hidden2");
+      </script> -->
+  </body>
+</html>
