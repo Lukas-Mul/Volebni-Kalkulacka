@@ -1,3 +1,36 @@
+@font-face {
+  src: url(fonts/HKGrotesk-Regular.otf);
+  font-family: "HKGrotesk-Regular";
+}
+@font-face {
+  src: url(fonts/HKGrotesk-Bold.otf);
+  font-family: "HKGrotesk-Bold";
+}
+@font-face {
+  src: url(fonts/HKGrotesk-BoldItalic.otf);
+  font-family: "HKGrotesk-Bold-Italic";
+}
+@font-face {
+  src: url(fonts/HKGrotesk-Medium.otf);
+  font-family: "HKGrotesk-Medium";
+}
+@font-face {
+  src: url(fonts/HKGrotesk-MediumItalic.otf);
+  font-family: "HKGrotesk-Medium-Italic";
+}
+@font-face {
+  src: url(fonts/HKGrotesk-SemiBold.otf);
+  font-family: "HKGrotesk-SemiBold";
+}
+@font-face {
+  src: url(fonts/HKGrotesk-SemiBoldItalic.otf);
+  font-family: "HKGrotesk-SemiBoldItalic";
+}
+@font-face {
+  src: url(fonts/HKGrotesk-Italic.otf);
+  font-family: "HKGrotesk-Italic";
+}
+
 /* intro */
 :root {
   background-color: #ecf5ff;
@@ -6,7 +39,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif, "Segoe UI", Tahoma, sans-serif;
+  font-family: "HKGrotesk-Regular";
   margin: 0;
   padding: 0;
   color: white;
@@ -60,10 +93,15 @@ a {
   top: 6rem;
 }
 
+.text-container h2:first-of-type {
+  font-family: "HKGrotesk-SemiBoldItalic";
+}
+
 .lang-icon {
   position: absolute;
   right: 0rem;
   top: 1.8rem;
+  font-family: "HKGrotesk-Regular";
 }
 
 .container {
@@ -89,10 +127,11 @@ a {
   height: 50vh;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   outline: none;
   background-color: #b6111d;
+  /* padding-top: 3rem; */
 }
 
 .answer-container-blue {
@@ -106,6 +145,7 @@ a {
 }
 
 .justify-center {
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -143,65 +183,153 @@ a {
 
 #endGameId {
   background-color: black;
+  font-size: 1.8rem;
 }
 
+/* LAST PAGE CSS */
+
 .last-question-container {
+  padding-top: 4%;
   flex-direction: column;
-  height: 90%;
-  background-color: black;
+  height: 88%;
+  background-color: #2b447e;
 }
 
 .last-question-container1 {
-  height: 10%;
+  height: 12%;
   border: none;
   padding: 1% 0% 4% 4%;
+  background-color: #2b447e;
 }
 
 .last-question-answer {
-  background-color: #2b447e;
-  width: 70.5%;
+  background-color: white;
+  width: 50%;
   height: fit-content;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5%;
+  /* margin-top: 0.5%; */
 }
 
 .last-question-text {
-  padding: 1.5rem;
+  padding: 1.5%;
   height: fit-content;
+  color: #2b447e;
+  font-size: 280%;
+  font-family: "HKGrotesk-Italic";
   /* margin: 1.5rem; */
 }
 
-.outcome {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  font-size: 1.8rem;
-  width: 100%;
+#partiesId {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  text-align: center;
+  width: 50%;
+  height: 50%;
+  background-color: black;
+  text-align: left;
+  padding-top: 3%;
+  padding-left: 3%;
+  /* margin-top: 14rem; */
 }
 
-#partiesId {
-  text-align: center;
-  padding: 3%;
-  width: 100%;
-  margin-top: 14rem;
+#partiesID h1:first-of-type {
+  font-family: "HKGrotesk-";
 }
 
 .parties-container {
+  position: absolute;
+  top: 0%;
+  left: 50%;
   display: flex;
   flex-direction: column;
-  /* margin: 0 auto; */
-  width: 40%;
-  text-align: center;
-  /* justify-content: center; */
   align-items: center;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  background-color: #b6111d;
+  justify-content: center;
+}
+
+.history-text-div {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  height: 50%;
+  width: 50%;
+  background-color: #2b447e;
+  text-align: left;
+  padding-top: 3%;
+  padding-left: 3%;
+  /* padding-bottom: 10%; */
+}
+
+.history-text-text {
+  width: 90%;
+  text-align: justify;
+  line-height: 130%;
+  font-family: "HKGrotesk-Italic";
+}
+
+.history-text-text p {
+  font-family: "HKGrotesk-Italic";
+}
+
+.changingTextParties {
+  width: 90%;
+  text-align: justify;
+  line-height: 140%;
+}
+
+.party-characteristics {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  width: 50%;
+  background-color: #b6111d;
+  text-align: left;
+  padding-top: 3%;
+  padding-left: 3%;
+}
+
+.lastResetButtonDiv {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  bottom: 0%;
+  left: 0%;
+  background-color: yellow;
+}
+
+.lastResetButton {
+  position: absolute;
+  background-color: inherit;
+  outline: none;
+  color: black;
+  border: none;
+  cursor: grab;
+  font-size: 2.5rem;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  padding-right: 5%;
 }
 
 .parties-text {
-  margin: 2.5%;
-  padding: 0%;
+  margin: 0.5%;
+  padding: 1.5%;
   width: 60%;
   background-color: #2b447e;
+  margin: 1.5%;
+  cursor: grab;
+}
+
+.current {
+  background-color: #b6111d;
+  color: white;
 }
 
 .hidden {
@@ -220,11 +348,144 @@ a {
   display: none;
 }
 
-.hidden6 {
+.timeoutSign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* techto -50% je velikost toho divu modal. tzn, ze to posune 50% velikosti toho divu doleva a nahoru */
+  transform: translate(-50%, -50%) scale(1);
+  /* transition: 200ms ease-in-out; */
+  /* border: 1px solid black; */
+  z-index: 11;
+  background-color: yellow;
+  width: 60%;
+  height: 60%;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.timeoutSign-content {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 0px;
+}
+
+.timeoutSign-content-text {
+  position: absolute;
+  color: black;
+  font-size: 300%;
+  top: 12%;
+  left: 7%;
+}
+
+.timer {
+  color: black;
+  font-size: 300%;
+  position: absolute;
+  top: 12%;
+  right: 7%;
+}
+
+.continue {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 50%;
+  height: 14%;
+  background-color: white;
+  color: black;
+}
+
+.restartDiv {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 50%;
+  height: 14%;
+  background-color: black;
+}
+
+.restartDiv * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  outline: none;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: grab;
+  font-size: 2.5rem;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-weight: 500;
+  text-align: left;
+  padding-left: 10%;
+  font-family: "HKGrotesk-Regular";
+}
+
+.continueButton {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  outline: none;
+  color: black;
+  border: none;
+  padding: 1rem;
+  cursor: grab;
+  font-size: 2.5rem;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-weight: 700;
+  text-align: left;
+  padding-left: 10%;
+}
+
+.hideTimeoutSign {
   display: none;
 }
 
+#overlay {
+  position: absolute;
+  /* opacity: 0.9; */
+  /* transition: 200ms ease-in-out; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* pointer-events: none; */
+}
+
+#overlay2 {
+  position: absolute;
+  /* opacity: 0.9; */
+  /* transition: 200ms ease-in-out; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* pointer-events: none; */
+}
+
 .hidden7 {
+  display: none;
+}
+
+.hidden11 {
+  display: none;
+}
+
+.hideOverlay2 {
   display: none;
 }
 
@@ -249,40 +510,62 @@ a {
   background-color: white;
   outline: none;
   color: black;
-  border: none;
+  border: black solid 1px;
   padding: 2rem;
   margin-top: 10rem;
   cursor: grab;
   font-size: 2.5rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "HKGrotesk-Regular";
+  /* font-family: Arial, Helvetica, sans-serif; */
   font-weight: 700;
 }
 
 #explanation1-flex {
-  background-color: black;
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* techto -50% je velikost toho divu modal. tzn, ze to posune 50% velikosti toho divu doleva a nahoru */
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  z-index: 10;
+  background-color: #2b447e;
+  width: 50%;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 3rem;
 }
 
 #explanation2-flex {
-  background-color: black;
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* techto -50% je velikost toho divu modal. tzn, ze to posune 50% velikosti toho divu doleva a nahoru */
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  z-index: 10;
+  background-color: #2b447e;
+  width: 50%;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 3rem;
 }
 
 .vysvetlivka1 {
-  width: 50%;
-  font-size: 2.5rem;
+  width: fit-content;
+  font-size: 2rem;
   line-height: 4rem;
   text-align: justify;
+  color: white;
+  padding: 5%;
+  font-family: "HKGrotesk-Italic";
 }
 
 #progressBar {
@@ -292,26 +575,37 @@ a {
   width: 100%;
   height: 1rem;
   display: flex;
-  background-color: white;
+  background-color: black;
 }
 
 #progressBarFull {
   height: 1rem;
-  background-color: #2b447e;
+  background-color: yellow;
   width: 9, 09%;
+}
+
+#fakeProgressBar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 8.3%;
+  height: 1rem;
+  display: flex;
+  background-color: yellow;
 }
 
 .resetButton {
   position: absolute;
   right: 3rem;
-  bottom: 2rem;
-  background-color: rgb(29, 32, 61);
+  top: 2rem;
+  background-color: inherit;
   outline: none;
-  color: black;
+  color: white;
   border: none;
   padding: 2rem;
   cursor: grab;
   font-size: 2.5rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "HKGrotesk-Regular";
+  /* font-family: Arial, Helvetica, sans-serif; */
   font-weight: 700;
 }

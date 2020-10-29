@@ -1,7 +1,35 @@
+const timeoutSign = document.querySelector(".timeoutSign");
 
+// IDLE TIMEOUT - na nabidku, jestli bude pokracovat
+(function() {
+  const idleDurationSecs = 110;
+  let redirectUrl = './index.html';  // Redirect idle users to this URL
+  let idleTimeout;
+  let resetIdleTimeout = function() {
+    if(idleTimeout) clearTimeout(idleTimeout);
+    idleTimeout = setTimeout(function(){
+      // location.href = redirectUrl
+      overlay2.classList.remove("hideOverlay2");
+      timeoutSign.classList.remove("hideTimeoutSign");
+      let timeleft = 9;
+      let downloadTimer = setInterval(function(){
+      if(timeleft <= 0){
+        clearInterval(downloadTimer);
+        document.querySelector(".timer").innerHTML = "";
+        } else {
+        document.querySelector(".timer").innerHTML = timeleft;
+        }
+        timeleft -= 1;
+      }, 1000);
+    }, idleDurationSecs * 1000);
+  };
+  resetIdleTimeout();
+  ['click', 'touchstart', 'mousemove'].forEach(function(evt) {
+    document.addEventListener(evt, resetIdleTimeout, false)
+  });
+})();
 
-
-// IDLE TIMEOUT
+// IDLE TIMEOUT - na presmerovani na zacatek
 (function() {
   const idleDurationSecs = 120;
   let redirectUrl = './index.html';  // Redirect idle users to this URL
@@ -10,6 +38,7 @@
     if(idleTimeout) clearTimeout(idleTimeout);
     idleTimeout = setTimeout(function(){
       location.href = redirectUrl
+      // timeoutSign.classList.remove("hideTimeoutSign");
     }, idleDurationSecs * 1000);
   };
   resetIdleTimeout();
@@ -26,15 +55,22 @@ const allDivs = document.querySelectorAll(".parties-container div");
 //CONSTANTS
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const party = document.querySelectorAll(".parties-text");
 const questionContainer = document.querySelector(".question-container");
 const containerIntro = document.querySelector(".container-intro");
 const explanation1 = document.querySelector("#explanation1");
 const explanation2 = document.querySelector("#explanation2");
 const explanation1Flex = document.getElementById("explanation1-flex");
 const explanation2Flex = document.getElementById('explanation2-flex');
-const MAX_QUESTIONS = 11;
+const MAX_QUESTIONS = 12;
 const progressBarFull = document.getElementById('progressBarFull');
-
+const overlay = document.getElementById("overlay");
+const overlay2 = document.getElementById("overlay2");
+const restartDiv = document.querySelector(".restartDiv");
+const continueDiv = document.querySelector(".continue");
+const changingPartiesDiv = document.querySelector(".changingTextParties");
+const partiesContainerDiv = document.querySelector(".parties-container");
+const lastResetButtonDiv = document.querySelector(".lastResetButtonDiv");
 
 // VARIABLES
 let currentQuestion = {};
@@ -50,6 +86,12 @@ let agr = 0;
 let kler = 0;
 let mladStar = 0;
 let cstpd = 0;
+
+// const parties = [
+//   {
+
+//   }
+// ]
 
 // OTAZKY - TEXT
 let questions = [
@@ -156,31 +198,56 @@ let questions = [
 ];
 
 
-// RESETBUTTON
+// RESETBUTTON vpravo nahore
 const resetButton = document.createElement("button")
 resetButton.className = "resetButton";
-resetButton.innerText = "Zpátky na začátek";
-// let body = document.getElementsByTagName("body")[0];
+resetButton.innerText = "< RESTART";
 questionContainer.appendChild(resetButton);
 resetButton.addEventListener("click", function() {
     return window.location.assign("./index.html");
 });
 
+// RESETBUTTONDIV v oznamovacim okne
+const resetButtonDiv = document.createElement("button")
+resetButtonDiv.className = "resetButtonDiv";
+resetButtonDiv.innerText = " < RESTART";
+restartDiv.appendChild(resetButtonDiv);
+resetButtonDiv.addEventListener("click", function() {
+    return window.location.assign("./index.html");
+});
+
+// RESETBUTTON na posledni strance
+const resetButtonLast = document.createElement("button")
+resetButtonLast.className = "lastResetButton";
+resetButtonLast.innerText = "< RESTART";
+lastResetButtonDiv.appendChild(resetButtonLast);
+lastResetButtonDiv.addEventListener("click", function() {
+    return window.location.assign("./index.html");
+});
+
+// TLACITKO "ANO", PRO POKRACOVANI PO NECINNOSTI
+const continueButton = document.createElement("button")
+continueButton.className = "continueButton";
+continueButton.innerText = "ANO";
+continueDiv.appendChild(continueButton);
+continueButton.addEventListener("click", function() {
+  timeoutSign.classList.add("hideTimeoutSign");
+  overlay2.classList.add("hideOverlay2");
+});
+
+
 
 // FUNKCE STARTGAME
 startGame = () => {
-questionCounter = 0;
+questionCounter = 1;
 score = 0;
 availableQuestions = [...questions];
 getNewQuestion();
 };
 
-
-
 //FUNKCE getNewQuestion
 getNewQuestion = () => {
 //  if (availableQuestions.length === 0) {
-  
 // }
 
 questionCounter++
@@ -303,12 +370,12 @@ choice.addEventListener("click", (e) => {
   function createButton1 (){
     let button1 = document.createElement("button")
     button1.className = "button1";
-    button1.innerText = "Vysvětlivka"
+    button1.innerText = "Chci vědět víc"
     questionContainer.appendChild(button1)
     button1.addEventListener("click", function(){
-      // add class hidden na vsechno ostatni
-      containerIntro.classList.add("hidden6");
-      // remove class hidden na tu vysvetlivku
+      // add class hidden na overlay element, takze kliknutim se tam ten overlay element zobrazi a udela vsechno ostatni tmavym
+      overlay.classList.remove("hidden11");
+      // remove class hidden na tu vysvetlivku - oddela hidden class od te vysvetlivky, takze ta se zobrazi
       explanation1.classList.remove("hidden5");
       
     })
@@ -323,7 +390,7 @@ choice.addEventListener("click", (e) => {
     explanation1Flex.appendChild(button2)
     button2.addEventListener("click", function(){
       explanation1.classList.add("hidden5");
-      containerIntro.classList.remove("hidden6");
+      overlay.classList.add("hidden11");
     })
   }
 
@@ -337,11 +404,11 @@ choice.addEventListener("click", (e) => {
 function createButton3 (){
   let button3 = document.createElement("button")
   button3.className = "button3";
-  button3.innerText = "Vysvětlivka"
+  button3.innerText = "Chci vědět víc"
   questionContainer.appendChild(button3)
   button3.addEventListener("click", function(){
     // add class hidden na vsechno ostatni
-    containerIntro.classList.add("hidden6");
+    overlay.classList.remove("hidden11");
     // remove class hidden na tu vysvetlivku
     explanation2.classList.remove("hidden7");
   
@@ -357,7 +424,7 @@ function createButton4 (){
   explanation2Flex.appendChild(button4)
   button4.addEventListener("click", function(){
     explanation2.classList.add("hidden7");
-    containerIntro.classList.remove("hidden6");
+    overlay.classList.add("hidden11");
   })
 }
 
@@ -493,7 +560,7 @@ function hideButton3(){
       addClassLastAnswer()
       addClassLastText()
       addClassLastQuestion1()
-      resetButton.classList.add("hidden4")
+      // resetButton.classList.add("hidden4")
     }
     if (currentQuestion.answer == 10 && selectedAnswer == 2) {
       kler++;
@@ -503,7 +570,7 @@ function hideButton3(){
       addClassLastAnswer()
       addClassLastText()
       addClassLastQuestion1()
-      resetButton.classList.add("hidden4")
+      // resetButton.classList.add("hidden4")
 
     }
     // OTAZKA 11
@@ -577,17 +644,87 @@ function hideButton3(){
 
   // Preradi objekt strany od nejvetsiho po nejmensi pocet bodu
   const stranySorted = strany.sort((a, b) => parseFloat(b.strana) - parseFloat(a.strana));
-  console.log(stranySorted);
 
 
 // VEZME OBJEKT "stranySorted" A HODI HO DO DIVU
   const allDivs = document.querySelectorAll(".parties-container div");
   stranySorted.forEach(function(obj, index, arr) {
-      allDivs[index].innerHTML = "<a href=" + obj.link + ">" + obj.strana + " %<br>" + obj.text + "</a>";	
+      allDivs[index].innerHTML = obj.strana + " %<br>" + obj.text;
     });  
 
-    // CALLING the getNewQuestion function
-  getNewQuestion();
+function firstPartyToSee(){
+  if(allDivs[0].innerHTML.indexOf("Klerikální strana") !== -1) {
+    changingPartiesDiv.innerHTML = "<p>Klerikální strany</p><br> Katolické, nebo obecněji klerikální strany vznikly v 90. letech 19. století.  Dělily se na dva tábory: katolicko-národní a křesťanskosociální. První ze zmíněných existoval nějakou dobu u staročechů, a v roce 1897 byla založena Národní strana katolická v Království českém. Druhá větev se vyvíjela spíše v rámci občanské společnosti, a roku 1894 vznikla Křesťansko-sociální strana v Čechách. Katolíci byli loajální k monarchii a měli jasně austroslavistická stanoviska, kterých se drželi i během války. Katolické strany velmi konzervativní, odmítaly ženské hnutí, a společnost vnímaly jako stavovskou. Socialismus i liberalismus pak zavrhovali jako škodlivé pro systém.";
+    partiesContainerDiv.style.backgroundColor = "green"
+  } 
+  if(allDivs[0].innerHTML.indexOf("Koalice Mladočechů a Staročechů") !== -1) {
+    changingPartiesDiv.innerHTML = "<p>Koalice Mladočechů a Staročechů</p><br> <p>Mladočeši</p><p>Národní strana svobodomyslná, zkráceně Mladočeši, byla politickou stranou působící v českých zemích Rakouska-Uherska. Vznikla na konci roku 1874, po dlouhotrvajících sporech v Národní straně. Mladočeši hlásali zároveň český národní a zároveň liberální program. Na přelomu 19. a 20. století získala dominantní postavení v rámci českého politického spektra, a působili v ní například Karel Kramář, Alois Rašín nebo Miloslav Tyrš.</p><br><p>Staročeši</p> Národní strana byla první politickou stranou v českých zemích. Vznikla v roce 1848, ale po vzniku Mladočechů začala ztrácet vliv. Nejprve se jednalo o občanskou iniciativu, rozvinula se až po pádu Bachova absolutismu roku 1859. V rámci této strany se nacházela rozličná politická a ideová uskupení, v roce 1863 vzniklo mladočeské křídlo. Mezi lety 1863 a 1891 byla Národní strana částečně zastoupena v Říšské radě. Poté byla strana činná především na komunální úrovni, od roku 1890 však neměla žádný větší vliv na politiku.";
+  }
+  if(allDivs[0].innerHTML.indexOf("Českoslovanská strana sociálně demokratická") !== -1) {
+    changingPartiesDiv.innerHTML = "<p>Českoslovanská strana sociálně demokratická</p><br> Českoslovanská strana sociálně demokratická dělnická vznikla v roce 1893 v Českých Budějovicích, kdy se osamostatnila vůči rakouským socialistům. O 4 roky později již byla strana zastoupena v říšské radě, a roku 1897 v ní učinilo pět sociálně demokratických poslanců prohlášení, které vedlo ke vzniku ČSNS. Programově prosazovala uznání osmihodinové pracovní doby, všeobecné volební právo a spravedlivé mzdy. Ve volbách do Říšské rady 1907 strana poprvé kandidovala mimo rámec rakouské sociální demokracie. V českých zemích zvítězila, avšak po přepočtení na kurie skončila až za agrární stranou. Během první světové války strana odmítala odbojovou činnost a byla loajální k Rakousku-Uhersku, avšak ke konci války se levé křídlo strany podílelo na protiválečných demonstracích.";
+  }
+  if(allDivs[0].innerHTML.indexOf("Agrárníci") !== -1) {
+    changingPartiesDiv.innerHTML = "<p>Agrárníci</p><br> Jedna z nejvýznamnějších stran první republiky byla založena 6. ledna 1899 pod názvem Česká strana agrární, mezi zakládající osobnosti patřili Karel Prášek a Stanislav Kubr. Agrárníci se hlásili k národním tradicím, jejich snahou bylo oslabovat centralismus a rozšiřovat působnost sněmů Koruny české. Hlavním cílem agrárníků však bylo hájit zájmy rolnictva, i za cenu pragmatického přístupu v politice.";
+  }
+  if(allDivs[0].innerHTML.indexOf("Česká státopravní demokracie") !== -1) {
+    changingPartiesDiv.innerHTML = "<p>Česká státopravní demokracie</p><br> Státoprávní strana vznikla jako odštěpené křídlo pokrokové strany v roce 1894. Mezi čelní představitele této strany patřil budoucí prvorepublikový ministr financí Alois Rašín. Strana měla od začátku podporu především středních vrstev, intelektuálů a vysokoškolských studentů, ale někdy i dělníků. Kromě státoprávního křídla vzniklo také křídlo přirozenoprávní, dělnicko-pokrokové a anarchistické. Nebyla zcela jasně ideologicky vymezena a komunikovala s jinými stranami, levicovými i pravicovými. V prvních všeobecných volbách roku 1907 získali státoprávníci sedm mandátů.";
+  }
+}
+firstPartyToSee();
+
+
+//Switch color of active link
+party.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+    partiesContainerDiv.querySelector(".current").classList.remove("current");
+    item.classList.add("current");
+  });
+});
+
+
+
+
+    
+function clickOnDiv(){
+allDivs.forEach((something) => {
+something.addEventListener("click", (e) => {
+  
+  const selectedDiv = e.target; 
+  // const selectedNumberDiv = selectedDiv.dataset["number"]; 
+
+  function changeBackground(){
+    if(selectedDiv.innerHTML.indexOf("Klerikální strana") !== -1) {
+      changingPartiesDiv.innerHTML = "<p>Klerikální strany</p><br> Katolické, nebo obecněji klerikální strany vznikly v 90. letech 19. století.  Dělily se na dva tábory: katolicko-národní a křesťanskosociální. První ze zmíněných existoval nějakou dobu u staročechů, a v roce 1897 byla založena Národní strana katolická v Království českém. Druhá větev se vyvíjela spíše v rámci občanské společnosti, a roku 1894 vznikla Křesťansko-sociální strana v Čechách. Katolíci byli loajální k monarchii a měli jasně austroslavistická stanoviska, kterých se drželi i během války. Katolické strany velmi konzervativní, odmítaly ženské hnutí, a společnost vnímaly jako stavovskou. Socialismus i liberalismus pak zavrhovali jako škodlivé pro systém.";
+      partiesContainerDiv.style.backgroundColor = "green";
+    }
+    if(selectedDiv.innerHTML.indexOf("Koalice Mladočechů a Staročechů") !== -1) {
+      changingPartiesDiv.innerHTML = "<p>Koalice Mladočechů a Staročechů</p><br> <p>Mladočeši</p><p>Národní strana svobodomyslná, zkráceně Mladočeši, byla politickou stranou působící v českých zemích Rakouska-Uherska. Vznikla na konci roku 1874, po dlouhotrvajících sporech v Národní straně. Mladočeši hlásali zároveň český národní a zároveň liberální program. Na přelomu 19. a 20. století získala dominantní postavení v rámci českého politického spektra, a působili v ní například Karel Kramář, Alois Rašín nebo Miloslav Tyrš.</p><br><p>Staročeši</p> Národní strana byla první politickou stranou v českých zemích. Vznikla v roce 1848, ale po vzniku Mladočechů začala ztrácet vliv. Nejprve se jednalo o občanskou iniciativu, rozvinula se až po pádu Bachova absolutismu roku 1859. V rámci této strany se nacházela rozličná politická a ideová uskupení, v roce 1863 vzniklo mladočeské křídlo. Mezi lety 1863 a 1891 byla Národní strana částečně zastoupena v Říšské radě. Poté byla strana činná především na komunální úrovni, od roku 1890 však neměla žádný větší vliv na politiku.";
+      partiesContainerDiv.style.backgroundColor = "blue";
+    }
+    if(selectedDiv.innerHTML.indexOf("Českoslovanská strana sociálně demokratická") !== -1) {
+      changingPartiesDiv.innerHTML = "<p>Českoslovanská strana sociálně demokratická</p><br> Českoslovanská strana sociálně demokratická dělnická vznikla v roce 1893 v Českých Budějovicích, kdy se osamostatnila vůči rakouským socialistům. O 4 roky později již byla strana zastoupena v říšské radě, a roku 1897 v ní učinilo pět sociálně demokratických poslanců prohlášení, které vedlo ke vzniku ČSNS. Programově prosazovala uznání osmihodinové pracovní doby, všeobecné volební právo a spravedlivé mzdy. Ve volbách do Říšské rady 1907 strana poprvé kandidovala mimo rámec rakouské sociální demokracie. V českých zemích zvítězila, avšak po přepočtení na kurie skončila až za agrární stranou. Během první světové války strana odmítala odbojovou činnost a byla loajální k Rakousku-Uhersku, avšak ke konci války se levé křídlo strany podílelo na protiválečných demonstracích.";
+      partiesContainerDiv.style.backgroundColor = "purple";
+    }
+    if(selectedDiv.innerHTML.indexOf("Agrárníci") !== -1) {
+      changingPartiesDiv.innerHTML = "<p>Agrárníci</p><br> Jedna z nejvýznamnějších stran první republiky byla založena 6. ledna 1899 pod názvem Česká strana agrární, mezi zakládající osobnosti patřili Karel Prášek a Stanislav Kubr. Agrárníci se hlásili k národním tradicím, jejich snahou bylo oslabovat centralismus a rozšiřovat působnost sněmů Koruny české. Hlavním cílem agrárníků však bylo hájit zájmy rolnictva, i za cenu pragmatického přístupu v politice.";
+      partiesContainerDiv.style.backgroundColor = "brown";
+    }
+    if(selectedDiv.innerHTML.indexOf("Česká státopravní demokracie") !== -1) {
+      changingPartiesDiv.innerHTML = "<p>Česká státopravní demokracie</p><br> Státoprávní strana vznikla jako odštěpené křídlo pokrokové strany v roce 1894. Mezi čelní představitele této strany patřil budoucí prvorepublikový ministr financí Alois Rašín. Strana měla od začátku podporu především středních vrstev, intelektuálů a vysokoškolských studentů, ale někdy i dělníků. Kromě státoprávního křídla vzniklo také křídlo přirozenoprávní, dělnicko-pokrokové a anarchistické. Nebyla zcela jasně ideologicky vymezena a komunikovala s jinými stranami, levicovými i pravicovými. V prvních všeobecných volbách roku 1907 získali státoprávníci sedm mandátů.";
+      partiesContainerDiv.style.backgroundColor = "black";
+    }
+  }
+
+  changeBackground();
+
+
+ 
+})});
+};
+clickOnDiv();
+
+
+getNewQuestion();
   
 });
 });

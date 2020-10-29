@@ -12,6 +12,9 @@
       <div id="game" class="justify-center flex-column">
         <div class="question-container">
         <h2 id="question">Jste žena?</h2>
+        <div id="fakeProgressBar">
+          <div id="fakeProgressBarFull"></div>
+        </div>
         </div>
         <div class="answer-container">
         <div class="choice-container">
@@ -25,12 +28,19 @@
         </div>
       </div>
     </div>
+    <div id="overlay" class="hidden11"></div>    
+    <div id="overlay2" class="hideOverlay2"></div>    
 
+    <div class="timeoutSign hideTimeoutSign">
+      <div class="timeoutSign-content">
+        <div class="timeoutSign-content-text">Budete pokračovat?</div>
+        <div class="timer">10</div>
+      </div>
+      <div class="continue"></div>
+      <div class="restartDiv"></div>
+    </div>
   
     <script src="./gameGender.js"></script>
-    <script type="text/javascript">
-      resetButton.classList.add("hidden");
-      </script>
     
   </body>
 </html>

@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Volební kalkulačka</title>
-    <!-- <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="game.css" /> -->
     <link rel="stylesheet" href="2_intro_style.css" />
   </head>
   <body>
+    <!-- <div id="areYouWoman" class="hideWoman">
+      <div class="womanContainer">
+        <div class="woman-question-container"></div>
+        <div class="yes-woman-answer-container"></div>
+        <div class="no-woman-answer-container"></div>
+      </div>
+    <div id="sorryYouAreWoman" class="hideSorryYouAreWoman">
+      <div class="sorryGirlContainer">
+        <div class="sorryYouMustWait"></div>
+        <div class="sorryGirlRestart"></div>
+      </div>
+    </div>
+    <div id="okBro" class="hideBro">
+      <div class="youCanContinue">
+        <div class="youCanVote"></div>
+        <div class="continueBro"></div>
+      </div>
+    </div> -->
     <div id="explanation1" class="hidden5">
       <div id="explanation1-flex">
         <p class="vysvetlivka1">
@@ -30,9 +47,7 @@
     </div>
     <div id="hideAll" class="container-intro">
       <div id="game" class="justify-center flex-column hidden3">
-        
         <div class="question-container">
-          
         <h2 id="question">Souhlasíte s tím, že bylo zavedeno všeobecné volební právo? Volit bucou moci nyní všichni muži starší 24 let a do parlamentu mohou být zvoleni, když dovrší 30 let věku. Končí omezení volebního práva majetkem nebo původem.</h2>
         <div id="progressBar">
           <div id="progressBarFull"></div>
@@ -65,17 +80,49 @@
 
 
       <div id="endGameId" class="justify-center flex-column outcome hidden2 ">
-        <h2 id="partiesId">Nejvíce jste souhlasili s</h2>
+        <div id="partiesId">
+          <h1>Ve volbách byste svým hlasem podpořili:</h1>
+        </div>
         <div class="parties-container">
-          <div class="parties-text" data-number="1">Party 1</div>
+          <div class="parties-text current" data-number="1">Party 1</div>
           <div class="parties-text" data-number="2">Party 2</div>
           <div class="parties-text" data-number="3">Party 3</div>
           <div class="parties-text" data-number="4">Party 4</div>
           <div class="parties-text" data-number="5">Party 5</div>
         </div>
+        <div class="history-text-div">
+          <div class="history-text-text">
+          <p>V českých zemích se účastnilo voleb 84 % voličů! Kombinace většinového systému a nerovného rozdělení volebních obvodů ale zkreslila výsledky voleb. Sociální demokracie sice získala 37,4 % hlasů, ale jen 22,3 % mandátů.Vedle toho agrárníci měli 24,3 % hlasů, ale zisk 22,5 % mandátů.</p> 
+          <br>
+          <p>Pokud jde o počty, zásadními českými stranami/uskupeními se ve vídeňském parlamentu staly agrárníci s 28 mandáty, dále blok mladočechů se staročechy s 26 mandáty, poté sociální demokracie s 24 mandáty, klerikální strany se 17 mandáty, státoprávní blok s 9 mandáty. Menší zisky měli tzv. pokrokáři a nezávislí s celkem čtyřmi mandáty.</p>
+          <br>
+          <p>Jako do značné míry samostatný kandidát uspěl i T. G. Masaryk, neměl však v parlamentě stranické spojence.</p>
+          <br>
+          <p>Z hlediska celku vídeňského parlamentu bylo zásadní, že se konzervativní i reformní strany úspěšně pokusily izolovat reálného vítěze voleb – sociální demokracii. Vedle národnostní logicky začala do politiky vstupovat i další témata, nejvýrazněji sociální. Bylo jasné, že i v Čechách se pomalu prosazuje radikálnější levicová politika. Vedle ní ale rostli také pravicoví agrárníci.</p>
+          <br>
+          <p>Vliv někdejších reprezentantů národa - mladočechů a staročechů - pomalu a jistě končil.</p>             
+          </div>
+        </div>
+        <div class="party-characteristics">
+          <div class="changingTextParties">
+            Tady bude charakteristika jednotlivych stran
+          </div>
+          <div class="lastResetButtonDiv">
+          </div>
+        </div>
       </div>
     </div>
-    
+    <div id="overlay" class="hidden11"></div>    
+    <div id="overlay2" class="hideOverlay2"></div>    
+
+    <div class="timeoutSign hideTimeoutSign">
+      <div class="timeoutSign-content">
+        <div class="timeoutSign-content-text">Budete pokračovat?</div>
+        <div class="timer">10</div>
+      </div>
+      <div class="continue"></div>
+      <div class="restartDiv"></div>
+    </div>
 
     <script src="./game1.js"></script>
     <!-- <script type="text/javascript">
