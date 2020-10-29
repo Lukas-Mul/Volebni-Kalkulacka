@@ -565,7 +565,7 @@ a {
   text-align: justify;
   color: white;
   padding: 5%;
-  font-family: "HKGrotesk-Italic";
+  /* font-family: "HKGrotesk-Italic"; */
 }
 
 #progressBar {
