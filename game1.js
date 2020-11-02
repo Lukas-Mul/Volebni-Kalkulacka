@@ -95,78 +95,78 @@ let cstpd = 0;
 
 // OTAZKY - TEXT
 let questions = [
-{
-  question: "1)	Jste žena?",
-  choice1: "Ano",
-  choice2: "Ne",
-  answer: 0,
-},
+// {
+//   question: "Jste žena?",
+//   choice1: "Ano",
+//   choice2: "Ne",
+//   answer: 0,
+// },
 {
   question:
-    "Souhlasíte s tím, že bylo zavedeno všeobecné volební právo? Volit budou moci nyní všichni muži starší 24 let a do parlamentu mohou být zvoleni, když dovrší 30 let věku. Končí omezení volebního práva majetkem nebo původem. ?",
+    "Souhlasíte s tím, že bylo zavedeno všeobecné volební právo? Volit budou moci nyní všichni muži starší 24 let a do parlamentu mohou být zvoleni, když dovrší 30 let věku. Končí omezení volebního práva majetkem nebo původem.",
   choice1: "Ano",
   choice2: "Ne",
   answer: 1,
 },
 {
   question:
-    "2)	Souhlasíte se zavedením volebního práva pro ženy? Ne všichni jsou spokojeni, že bylo zavedeno pouze pro muže. Jste tedy pro radikální rozšíření volebního práva? ?",
+    "Souhlasíte se zavedením volebního práva pro ženy? Ne všichni jsou spokojeni, že bylo zavedeno pouze pro muže. Jste tedy pro radikální rozšíření volebního práva?",
   choice1: "Ano",
   choice2: "Ne",
   answer: 2,
 },
 {
   question:
-    "3)	Hlavním bodem programu musí být hájení národních zájmů! Vše ostatní je podřízeno co největší národní samostatnosti uvnitř monarchie.",
+    "Hlavním bodem programu musí být hájení národních zájmů! Vše ostatní je podřízeno co největší národní samostatnosti uvnitř monarchie.",
   choice1: "Ano",
   choice2: "Ne",
   answer: 3,
 },
 {
   question:
-    "4)	Česká politika byla dlouhá léta v pasivitě. Během následné aktivní politiky měla zastoupení i v rakouských vládách. Je zde široké pole možností. Můžete preferovat spolupráci s Vídní i na vládní úrovni nebo se naopak radikálně vymezovat a odmítat vstup do vlády. Jste pro, aby měla česká politika zastoupení v rakouské vládě, máme mít ve Vídni své ministry?",
+    "Česká politika byla dlouhá léta v pasivitě. Během následné aktivní politiky měla zastoupení i v rakouských vládách. Je zde široké pole možností. Můžete preferovat spolupráci s Vídní i na vládní úrovni nebo se naopak radikálně vymezovat a odmítat vstup do vlády. Jste pro, aby měla česká politika zastoupení v rakouské vládě? Máme mít ve Vídni své ministry?",
   choice1: "Ano",
   choice2: "Ne",
   answer: 4,
 },
 {
   question:
-    "5)	Česká politika by měla jít cestou jednotné národní kandidátky i ve volbách. Nesmíme se štěpit do stranických zájmů.",
+    "Česká politika by měla jít cestou jednotné národní kandidátky i ve volbách. Nesmíme se štěpit do stranických zájmů.",
   choice1: "Ano",
   choice2: "Ne",
   answer: 5,
 },
 {
   question:
-    "6)	Pro českou politiku jsou klíčové hospodářské zájmy. Jde o co největší autonomii v oblasti rozvoje průmyslu a venkova.",
+    "Pro českou politiku jsou klíčové hospodářské zájmy. Jde o co největší autonomii v oblasti rozvoje průmyslu a venkova.",
   choice1: "Ano",
   choice2: "Ne",
   answer: 6,
 },
 {
   question:
-    "7)	Česká politika potřebuje jednoznačného vůdce a charismatickou osobnost v čele. Jednoznačným vůdcem národa je Karel Kramář!",
+    "Česká politika potřebuje jednoznačného vůdce a charismatickou osobnost v čele. Jednoznačným vůdcem národa je Karel Kramář!",
   choice1: "Ano",
   choice2: "Ne",
   answer: 7,
 },
 {
   question:
-    "8)	Důležitou součástí programu českých stran musí být i zájem o Slovensko, jak píše kandidát do parlamentu, profesor pražské univerzity T. G. Masaryk!",
+    "Důležitou součástí programu českých stran musí být i zájem o Slovensko, jak píše kandidát do parlamentu, profesor pražské univerzity T. G. Masaryk!",
   choice1: "Ano",
   choice2: "Ne",
   answer: 8,
 },
 {
   question:
-    "9)	V mezinárodní politice se Rakousko-Uhersko orientuje na Německo a Itálii. Vedle toho panují u většiny slovanských národů jisté sympatie k Rusku. Sdílíte je? Souhlasíte s tím, aby se i česká politika více přimknula k Rusku?",
+    "V mezinárodní politice se Rakousko-Uhersko orientuje na Německo a Itálii. Vedle toho panují u většiny slovanských národů jisté sympatie k Rusku. Sdílíte je? Souhlasíte s tím, aby se i česká politika více přimknula k Rusku?",
   choice1: "Ano",
   choice2: "Ne",
   answer: 9,
 },
 {
   question:
-    "10)	Doba se mění, objevují se nové otázky a rakouská vláda neumí reagovat. Nastal čas pro nový agresivnější způsob politiky. Méně vyjednávání, více nátlaku!",
+    "Doba se mění, objevují se nové otázky a rakouská vláda neumí reagovat. Nastal čas pro nový agresivnější způsob politiky. Méně vyjednávání, více nátlaku!",
   choice1: "Ano",
   choice2: "Ne",
   answer: 10,
@@ -255,11 +255,11 @@ questionCounter++
 progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
 
-currentQuestion = availableQuestions[1];
+currentQuestion = availableQuestions[0];
 question.innerText = currentQuestion.question; //ta question na leve strane znaci ten div s tou otazkou. priradim k ni innerText, ktery si js najde tak, ze pujde podle currentQuestion a vezme si property question z te currentQuestion.
 choices.forEach((choice) => {
   const number = choice.dataset["number"]; //tohle vezme to cislo z toho datasetu v html
-  choice.innerText = currentQuestion["choice" + number]; //tomu parametru choice to priradi innerText, ktery je v currentQuestion["choice" + number]. Tohle znamena vlastne choice1, choice2 apod.
+  choice.innerHTML = currentQuestion["choice" + number]; //tomu parametru choice to priradi innerText, ktery je v currentQuestion["choice" + number]. Tohle znamena vlastne choice1, choice2 apod.
 });
 availableQuestions.splice(questionIndex, 1); //Tohle vyhodi tu otazku, ktera byla pouzita z obehu
 acceptingAnswers = true; //tohle umozni odpovidat na otazky az tehdy, kdyz bylo vsechno nacteno (proto je na zacatku dana hodnota false)
@@ -370,7 +370,7 @@ choice.addEventListener("click", (e) => {
   function createButton1 (){
     let button1 = document.createElement("button")
     button1.className = "button1";
-    button1.innerText = "Chci vědět víc"
+    button1.innerText = "ZJISTIT VÍC"
     questionContainer.appendChild(button1)
     button1.addEventListener("click", function(){
       // add class hidden na overlay element, takze kliknutim se tam ten overlay element zobrazi a udela vsechno ostatni tmavym
@@ -386,7 +386,7 @@ choice.addEventListener("click", (e) => {
   function createButton2 (){
     const button2 = document.createElement("button")
     button2.className = "button2";
-    button2.innerText = "Zpět k otázce"
+    button2.innerText = "ZPĚT"
     explanation1Flex.appendChild(button2)
     button2.addEventListener("click", function(){
       explanation1.classList.add("hidden5");
@@ -404,7 +404,7 @@ choice.addEventListener("click", (e) => {
 function createButton3 (){
   let button3 = document.createElement("button")
   button3.className = "button3";
-  button3.innerText = "Chci vědět víc"
+  button3.innerText = "ZJISTIT VÍC"
   questionContainer.appendChild(button3)
   button3.addEventListener("click", function(){
     // add class hidden na vsechno ostatni
@@ -420,7 +420,7 @@ function createButton3 (){
 function createButton4 (){
   const button4 = document.createElement("button")
   button4.className = "button4";
-  button4.innerText = "Zpět k otázce"
+  button4.innerText = "ZPĚT"
   explanation2Flex.appendChild(button4)
   button4.addEventListener("click", function(){
     explanation2.classList.add("hidden7");
@@ -605,7 +605,7 @@ function hideButton3(){
   // ARRAY OBJEKT VYSLEDKY TEXT
   let strany = [
       {
-      text:"Klerikální strana",
+      text:"KLERIKÁLNÍ STRANA",
       cislo: 1,
       strana: Math.floor((kler / 11) * 100),
       link: "klerikove.html"
@@ -613,28 +613,28 @@ function hideButton3(){
       },
   {
       text:
-        "Koalice Mladočechů a Staročechů",
+        "KOALICE MLADOČECHŮ A STAROČECHŮ",
       cislo: 2,
       strana: Math.floor((mladStar / 11) * 100),
       link: "mladStar.html"
   },
   {
       text:
-        "Českoslovanská strana sociálně demokratická",
+        "ČESKOSLOVANSKÁ STRANA SOCIÁLNĚ DEMOKRATICKÁ",
       cislo: 3,
       strana: Math.floor((cssd / 11) * 100),
       link: "cssd.html"
   },
   {
       text:
-        "Agrárníci",
+        "AGRÁRNÍCI",
       cislo: 4,
       strana: Math.floor((agr / 11) * 100),
       link: "agrarnici.html"
   },
   {
       text:
-        "Česká státopravní demokracie",
+        "ČESKÁ STÁTOPRÁVNÍ DEMOKRACIE",
       cislo: 5,
       strana: Math.floor((cstpd / 11) * 100),
       link: "cstd.html",
@@ -649,25 +649,34 @@ function hideButton3(){
 // VEZME OBJEKT "stranySorted" A HODI HO DO DIVU
   const allDivs = document.querySelectorAll(".parties-container div");
   stranySorted.forEach(function(obj, index, arr) {
-      allDivs[index].innerHTML = obj.strana + " %<br>" + obj.text;
+      // allDivs[index].innerHTML = obj.strana + " %<br>" + obj.text;
+      allDivs[index].innerHTML = obj.strana + "% " + obj.text;
     });  
 
 function firstPartyToSee(){
-  if(allDivs[0].innerHTML.indexOf("Klerikální strana") !== -1) {
+  if(allDivs[0].innerHTML.indexOf("KLERIKÁLNÍ STRANA") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Klerikální strany</p><br> Katolické, nebo obecněji klerikální strany vznikly v 90. letech 19. století.  Dělily se na dva tábory: katolicko-národní a křesťanskosociální. První ze zmíněných existoval nějakou dobu u staročechů, a v roce 1897 byla založena Národní strana katolická v Království českém. Druhá větev se vyvíjela spíše v rámci občanské společnosti, a roku 1894 vznikla Křesťansko-sociální strana v Čechách. Katolíci byli loajální k monarchii a měli jasně austroslavistická stanoviska, kterých se drželi i během války. Katolické strany velmi konzervativní, odmítaly ženské hnutí, a společnost vnímaly jako stavovskou. Socialismus i liberalismus pak zavrhovali jako škodlivé pro systém.";
     partiesContainerDiv.style.backgroundColor = "green"
   } 
-  if(allDivs[0].innerHTML.indexOf("Koalice Mladočechů a Staročechů") !== -1) {
+  if(allDivs[0].innerHTML.indexOf("KOALICE MLADOČECHŮ A STAROČECHŮ") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Koalice Mladočechů a Staročechů</p><br> <p>Mladočeši</p><p>Národní strana svobodomyslná, zkráceně Mladočeši, byla politickou stranou působící v českých zemích Rakouska-Uherska. Vznikla na konci roku 1874, po dlouhotrvajících sporech v Národní straně. Mladočeši hlásali zároveň český národní a zároveň liberální program. Na přelomu 19. a 20. století získala dominantní postavení v rámci českého politického spektra, a působili v ní například Karel Kramář, Alois Rašín nebo Miloslav Tyrš.</p><br><p>Staročeši</p> Národní strana byla první politickou stranou v českých zemích. Vznikla v roce 1848, ale po vzniku Mladočechů začala ztrácet vliv. Nejprve se jednalo o občanskou iniciativu, rozvinula se až po pádu Bachova absolutismu roku 1859. V rámci této strany se nacházela rozličná politická a ideová uskupení, v roce 1863 vzniklo mladočeské křídlo. Mezi lety 1863 a 1891 byla Národní strana částečně zastoupena v Říšské radě. Poté byla strana činná především na komunální úrovni, od roku 1890 však neměla žádný větší vliv na politiku.";
+    partiesContainerDiv.style.backgroundColor = "blue"
+
   }
-  if(allDivs[0].innerHTML.indexOf("Českoslovanská strana sociálně demokratická") !== -1) {
+  if(allDivs[0].innerHTML.indexOf("ČESKOSLOVANSKÁ STRANA SOCIÁLNĚ DEMOKRATICKÁ") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Českoslovanská strana sociálně demokratická</p><br> Českoslovanská strana sociálně demokratická dělnická vznikla v roce 1893 v Českých Budějovicích, kdy se osamostatnila vůči rakouským socialistům. O 4 roky později již byla strana zastoupena v říšské radě, a roku 1897 v ní učinilo pět sociálně demokratických poslanců prohlášení, které vedlo ke vzniku ČSNS. Programově prosazovala uznání osmihodinové pracovní doby, všeobecné volební právo a spravedlivé mzdy. Ve volbách do Říšské rady 1907 strana poprvé kandidovala mimo rámec rakouské sociální demokracie. V českých zemích zvítězila, avšak po přepočtení na kurie skončila až za agrární stranou. Během první světové války strana odmítala odbojovou činnost a byla loajální k Rakousku-Uhersku, avšak ke konci války se levé křídlo strany podílelo na protiválečných demonstracích.";
+    partiesContainerDiv.style.backgroundColor = "purple";
+
   }
-  if(allDivs[0].innerHTML.indexOf("Agrárníci") !== -1) {
+  if(allDivs[0].innerHTML.indexOf("AGRÁRNÍCI") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Agrárníci</p><br> Jedna z nejvýznamnějších stran první republiky byla založena 6. ledna 1899 pod názvem Česká strana agrární, mezi zakládající osobnosti patřili Karel Prášek a Stanislav Kubr. Agrárníci se hlásili k národním tradicím, jejich snahou bylo oslabovat centralismus a rozšiřovat působnost sněmů Koruny české. Hlavním cílem agrárníků však bylo hájit zájmy rolnictva, i za cenu pragmatického přístupu v politice.";
+    partiesContainerDiv.style.backgroundColor = "brown";
+
   }
-  if(allDivs[0].innerHTML.indexOf("Česká státopravní demokracie") !== -1) {
+  if(allDivs[0].innerHTML.indexOf("ČESKÁ STÁTOPRÁVNÍ DEMOKRACIE") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Česká státopravní demokracie</p><br> Státoprávní strana vznikla jako odštěpené křídlo pokrokové strany v roce 1894. Mezi čelní představitele této strany patřil budoucí prvorepublikový ministr financí Alois Rašín. Strana měla od začátku podporu především středních vrstev, intelektuálů a vysokoškolských studentů, ale někdy i dělníků. Kromě státoprávního křídla vzniklo také křídlo přirozenoprávní, dělnicko-pokrokové a anarchistické. Nebyla zcela jasně ideologicky vymezena a komunikovala s jinými stranami, levicovými i pravicovými. V prvních všeobecných volbách roku 1907 získali státoprávníci sedm mandátů.";
+    partiesContainerDiv.style.backgroundColor = "black";
+
   }
 }
 firstPartyToSee();
@@ -693,23 +702,23 @@ something.addEventListener("click", (e) => {
   // const selectedNumberDiv = selectedDiv.dataset["number"]; 
 
   function changeBackground(){
-    if(selectedDiv.innerHTML.indexOf("Klerikální strana") !== -1) {
+    if(selectedDiv.innerHTML.indexOf("KLERIKÁLNÍ STRANA") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Klerikální strany</p><br> Katolické, nebo obecněji klerikální strany vznikly v 90. letech 19. století.  Dělily se na dva tábory: katolicko-národní a křesťanskosociální. První ze zmíněných existoval nějakou dobu u staročechů, a v roce 1897 byla založena Národní strana katolická v Království českém. Druhá větev se vyvíjela spíše v rámci občanské společnosti, a roku 1894 vznikla Křesťansko-sociální strana v Čechách. Katolíci byli loajální k monarchii a měli jasně austroslavistická stanoviska, kterých se drželi i během války. Katolické strany velmi konzervativní, odmítaly ženské hnutí, a společnost vnímaly jako stavovskou. Socialismus i liberalismus pak zavrhovali jako škodlivé pro systém.";
       partiesContainerDiv.style.backgroundColor = "green";
     }
-    if(selectedDiv.innerHTML.indexOf("Koalice Mladočechů a Staročechů") !== -1) {
+    if(selectedDiv.innerHTML.indexOf("KOALICE MLADOČECHŮ A STAROČECHŮ") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Koalice Mladočechů a Staročechů</p><br> <p>Mladočeši</p><p>Národní strana svobodomyslná, zkráceně Mladočeši, byla politickou stranou působící v českých zemích Rakouska-Uherska. Vznikla na konci roku 1874, po dlouhotrvajících sporech v Národní straně. Mladočeši hlásali zároveň český národní a zároveň liberální program. Na přelomu 19. a 20. století získala dominantní postavení v rámci českého politického spektra, a působili v ní například Karel Kramář, Alois Rašín nebo Miloslav Tyrš.</p><br><p>Staročeši</p> Národní strana byla první politickou stranou v českých zemích. Vznikla v roce 1848, ale po vzniku Mladočechů začala ztrácet vliv. Nejprve se jednalo o občanskou iniciativu, rozvinula se až po pádu Bachova absolutismu roku 1859. V rámci této strany se nacházela rozličná politická a ideová uskupení, v roce 1863 vzniklo mladočeské křídlo. Mezi lety 1863 a 1891 byla Národní strana částečně zastoupena v Říšské radě. Poté byla strana činná především na komunální úrovni, od roku 1890 však neměla žádný větší vliv na politiku.";
       partiesContainerDiv.style.backgroundColor = "blue";
     }
-    if(selectedDiv.innerHTML.indexOf("Českoslovanská strana sociálně demokratická") !== -1) {
+    if(selectedDiv.innerHTML.indexOf("ČESKOSLOVANSKÁ STRANA SOCIÁLNĚ DEMOKRATICKÁ") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Českoslovanská strana sociálně demokratická</p><br> Českoslovanská strana sociálně demokratická dělnická vznikla v roce 1893 v Českých Budějovicích, kdy se osamostatnila vůči rakouským socialistům. O 4 roky později již byla strana zastoupena v říšské radě, a roku 1897 v ní učinilo pět sociálně demokratických poslanců prohlášení, které vedlo ke vzniku ČSNS. Programově prosazovala uznání osmihodinové pracovní doby, všeobecné volební právo a spravedlivé mzdy. Ve volbách do Říšské rady 1907 strana poprvé kandidovala mimo rámec rakouské sociální demokracie. V českých zemích zvítězila, avšak po přepočtení na kurie skončila až za agrární stranou. Během první světové války strana odmítala odbojovou činnost a byla loajální k Rakousku-Uhersku, avšak ke konci války se levé křídlo strany podílelo na protiválečných demonstracích.";
       partiesContainerDiv.style.backgroundColor = "purple";
     }
-    if(selectedDiv.innerHTML.indexOf("Agrárníci") !== -1) {
+    if(selectedDiv.innerHTML.indexOf("AGRÁRNÍCI") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Agrárníci</p><br> Jedna z nejvýznamnějších stran první republiky byla založena 6. ledna 1899 pod názvem Česká strana agrární, mezi zakládající osobnosti patřili Karel Prášek a Stanislav Kubr. Agrárníci se hlásili k národním tradicím, jejich snahou bylo oslabovat centralismus a rozšiřovat působnost sněmů Koruny české. Hlavním cílem agrárníků však bylo hájit zájmy rolnictva, i za cenu pragmatického přístupu v politice.";
       partiesContainerDiv.style.backgroundColor = "brown";
     }
-    if(selectedDiv.innerHTML.indexOf("Česká státopravní demokracie") !== -1) {
+    if(selectedDiv.innerHTML.indexOf("ČESKÁ STÁTOPRÁVNÍ DEMOKRACIE") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Česká státopravní demokracie</p><br> Státoprávní strana vznikla jako odštěpené křídlo pokrokové strany v roce 1894. Mezi čelní představitele této strany patřil budoucí prvorepublikový ministr financí Alois Rašín. Strana měla od začátku podporu především středních vrstev, intelektuálů a vysokoškolských studentů, ale někdy i dělníků. Kromě státoprávního křídla vzniklo také křídlo přirozenoprávní, dělnicko-pokrokové a anarchistické. Nebyla zcela jasně ideologicky vymezena a komunikovala s jinými stranami, levicovými i pravicovými. V prvních všeobecných volbách roku 1907 získali státoprávníci sedm mandátů.";
       partiesContainerDiv.style.backgroundColor = "black";
     }
