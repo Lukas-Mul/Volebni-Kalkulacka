@@ -34,7 +34,7 @@
 /* intro */
 :root {
   background-color: #ecf5ff;
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
 }
 
 * {
@@ -93,8 +93,13 @@ a {
   top: 6rem;
 }
 
+.text-container h1 {
+  font-size: 48pt;
+}
+
 .text-container h2:first-of-type {
   font-family: "HKGrotesk-SemiBoldItalic";
+  font-size: 45pt;
 }
 
 .lang-icon {
@@ -102,6 +107,7 @@ a {
   right: 0rem;
   top: 1.8rem;
   font-family: "HKGrotesk-Regular";
+  font-size: 36pt;
 }
 
 .container {
@@ -113,15 +119,44 @@ a {
 }
 
 .question-container {
-  position: relative;
+  /* position: relative; */
   padding: 3% 3% 3% 3%;
-  height: 50vh;
+  height: 50%;
   width: 100%;
   outline: none;
   border: none;
   background-color: black;
-  font-size: 2rem;
+  font-size: 36pt;
 }
+
+.question-container-muz {
+  /* position: relative; */
+  padding: 3% 3% 3% 3%;
+  height: 50%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: black;
+  font-size: 36pt;
+}
+
+#question {
+  padding-top: 0.6rem;
+  margin-top: 5rem;
+  font-size: 36pt;
+}
+
+.sorryYouCantVote {
+  padding-top: 5%;
+}
+
+.youCanVote {
+  padding-top: 5%;
+}
+
+/* .question-container h1 {
+  color: 36pt;
+} */
 
 .answer-container {
   height: 50vh;
@@ -172,18 +207,8 @@ a {
   padding: 7rem;
   width: 100%;
   height: 100%;
-  font-size: 4rem;
-}
-
-#question {
-  font-size: 4rem;
-  padding-top: 0.6rem;
-  margin-top: 5rem;
-}
-
-#endGameId {
-  background-color: black;
-  font-size: 1.8rem;
+  font-size: 36pt;
+  text-transform: uppercase;
 }
 
 /* LAST PAGE CSS */
@@ -192,18 +217,18 @@ a {
   padding-top: 4%;
   flex-direction: column;
   height: 88%;
-  background-color: #2b447e;
+  background-color: black;
 }
 
 .last-question-container1 {
   height: 12%;
   border: none;
   padding: 1% 0% 4% 4%;
-  background-color: #2b447e;
+  background-color: black;
 }
 
 .last-question-answer {
-  background-color: white;
+  background-color: #2b447e;
   width: 50%;
   height: fit-content;
   margin-bottom: 2.5%;
@@ -213,13 +238,19 @@ a {
 .last-question-text {
   padding: 1.5%;
   height: fit-content;
-  color: #2b447e;
-  font-size: 280%;
-  font-family: "HKGrotesk-Italic";
+  color: white;
+  font-size: 24pt;
+  font-family: "HKGrotesk-Regular";
+  text-transform: initial;
   /* margin: 1.5rem; */
 }
 
-#partiesId {
+#endGameId {
+  background-color: black;
+  font-size: 16pt;
+}
+
+.partiesId {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -233,8 +264,9 @@ a {
   /* margin-top: 14rem; */
 }
 
-#partiesID h1:first-of-type {
-  font-family: "HKGrotesk-";
+.youSupport {
+  font-size: 36pt;
+  font-family: "HKGrotesk-Regular";
 }
 
 .parties-container {
@@ -243,12 +275,38 @@ a {
   left: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   width: 50%;
   height: 50%;
-  text-align: center;
+  text-align: left;
   background-color: #b6111d;
   justify-content: center;
+}
+
+.parties-text {
+  margin: 0.5%;
+  padding: 1%;
+  padding-top: 1%;
+  height: 14%;
+  width: 28%;
+  background-color: white;
+  color: #b6111d;
+  margin: 0.5%;
+  margin-left: 5%;
+  cursor: grab;
+  font-size: 16pt;
+  line-height: 95%;
+}
+
+.current {
+  height: 20%;
+  width: 40%;
+  font-size: 24pt;
+  padding-top: 1%;
+  line-height: 95%;
+  /* transform: scale(); */
+  /* transform-origin: 0% 100%; */
+  transition: all 0.25s ease-in;
 }
 
 .history-text-div {
@@ -259,15 +317,15 @@ a {
   width: 50%;
   background-color: #2b447e;
   text-align: left;
-  padding-top: 3%;
+  padding-top: 2%;
   padding-left: 3%;
-  /* padding-bottom: 10%; */
+  padding-bottom: 10%;
 }
 
 .history-text-text {
   width: 90%;
-  text-align: justify;
-  line-height: 130%;
+  text-align: left;
+  line-height: 105%;
   font-family: "HKGrotesk-Italic";
 }
 
@@ -277,8 +335,8 @@ a {
 
 .changingTextParties {
   width: 90%;
-  text-align: justify;
-  line-height: 140%;
+  text-align: left;
+  line-height: 105%;
 }
 
 .party-characteristics {
@@ -289,7 +347,7 @@ a {
   width: 50%;
   background-color: #b6111d;
   text-align: left;
-  padding-top: 3%;
+  padding-top: 2%;
   padding-left: 3%;
 }
 
@@ -299,7 +357,7 @@ a {
   height: 10%;
   bottom: 0%;
   left: 0%;
-  background-color: yellow;
+  background-color: #f8dc20;
 }
 
 .lastResetButton {
@@ -309,27 +367,13 @@ a {
   color: black;
   border: none;
   cursor: grab;
-  font-size: 2.5rem;
+  font-size: 21pt;
   /* font-family: Arial, Helvetica, sans-serif; */
   font-weight: 700;
   width: 100%;
   height: 100%;
   text-align: right;
   padding-right: 5%;
-}
-
-.parties-text {
-  margin: 0.5%;
-  padding: 1.5%;
-  width: 60%;
-  background-color: #2b447e;
-  margin: 1.5%;
-  cursor: grab;
-}
-
-.current {
-  background-color: #b6111d;
-  color: white;
 }
 
 .hidden {
@@ -357,9 +401,9 @@ a {
   /* transition: 200ms ease-in-out; */
   /* border: 1px solid black; */
   z-index: 11;
-  background-color: yellow;
+  background-color: #f8dc20;
   width: 60%;
-  height: 60%;
+  height: 76%;
   max-width: 80%;
   display: flex;
   flex-direction: column;
@@ -381,11 +425,12 @@ a {
   font-size: 300%;
   top: 12%;
   left: 7%;
+  font-size: 36pt;
 }
 
 .timer {
   color: black;
-  font-size: 300%;
+  font-size: 36pt;
   position: absolute;
   top: 12%;
   right: 7%;
@@ -422,7 +467,7 @@ a {
   border: none;
   padding: 1rem;
   cursor: grab;
-  font-size: 2.5rem;
+  font-size: 30pt;
   /* font-family: Arial, Helvetica, sans-serif; */
   font-weight: 500;
   text-align: left;
@@ -442,7 +487,7 @@ a {
   border: none;
   padding: 1rem;
   cursor: grab;
-  font-size: 2.5rem;
+  font-size: 30pt;
   /* font-family: Arial, Helvetica, sans-serif; */
   font-weight: 700;
   text-align: left;
@@ -504,19 +549,35 @@ a {
 }
 
 .button1,
-.button2,
-.button3,
-.button4 {
+.button3 {
   background-color: white;
   outline: none;
   color: black;
   border: black solid 1px;
   padding: 2rem;
-  margin-top: 10rem;
+  margin-top: 1%;
   cursor: grab;
-  font-size: 2.5rem;
+  font-size: 21pt;
   font-family: "HKGrotesk-Regular";
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-weight: 700;
+}
+
+.button2,
+.button4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background-color: white;
+  outline: none;
+  border: none;
+  color: black;
+  text-align: left;
+  padding: 2rem;
+  padding-left: 4rem;
+  cursor: grab;
+  font-size: 30pt;
+  font-family: "HKGrotesk-Regular";
   font-weight: 700;
 }
 
@@ -527,14 +588,13 @@ a {
   /* techto -50% je velikost toho divu modal. tzn, ze to posune 50% velikosti toho divu doleva a nahoru */
   transform: translate(-50%, -50%) scale(1);
   transition: 200ms ease-in-out;
-  border: 1px solid black;
   z-index: 10;
-  background-color: #2b447e;
+  background-color: #f8dc20;
   width: 50%;
   max-width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   padding: 3rem;
 }
@@ -545,26 +605,27 @@ a {
   left: 50%;
   /* techto -50% je velikost toho divu modal. tzn, ze to posune 50% velikosti toho divu doleva a nahoru */
   transform: translate(-50%, -50%) scale(1);
-  transition: 200ms ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
   border: 1px solid black;
   z-index: 10;
-  background-color: #2b447e;
+  background-color: #f8dc20;
   width: 50%;
   max-width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   padding: 3rem;
 }
 
 .vysvetlivka1 {
-  width: fit-content;
-  font-size: 2rem;
-  line-height: 4rem;
-  text-align: justify;
-  color: white;
-  padding: 5%;
+  width: 50%;
+  font-size: 21pt;
+  line-height: 100%;
+  /* text-align: justify; */
+  color: black;
+  padding: 1.5%;
+  padding-bottom: 13%;
   /* font-family: "HKGrotesk-Italic"; */
 }
 
@@ -580,7 +641,7 @@ a {
 
 #progressBarFull {
   height: 1rem;
-  background-color: yellow;
+  background-color: #f8dc20;
   width: 9, 09%;
 }
 
@@ -591,7 +652,7 @@ a {
   width: 8.3%;
   height: 1rem;
   display: flex;
-  background-color: yellow;
+  background-color: #f8dc20;
 }
 
 .resetButton {
@@ -604,7 +665,7 @@ a {
   border: none;
   padding: 2rem;
   cursor: grab;
-  font-size: 2.5rem;
+  font-size: 21pt;
   font-family: "HKGrotesk-Regular";
   /* font-family: Arial, Helvetica, sans-serif; */
   font-weight: 700;
