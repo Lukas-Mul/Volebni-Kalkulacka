@@ -72,6 +72,9 @@ const changingPartiesDiv = document.querySelector(".changingTextParties");
 const partiesContainerDiv = document.querySelector(".parties-container");
 const lastResetButtonDiv = document.querySelector(".lastResetButtonDiv");
 
+const chosenAnswer = document.querySelectorAll(".choice-container");
+
+
 // VARIABLES
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -342,8 +345,8 @@ choice.addEventListener("click", (e) => {
   }
 
   function addClassLastAnswer() {
-    const hiddenContainer3 = document.querySelectorAll(".choice-text");
-    hiddenContainer3.forEach(function (item) {
+    const hiddenContainer4 = document.querySelectorAll(".choice-text");
+    hiddenContainer4.forEach(function (item) {
       if (
         currentQuestion.answer == 10 &&
         (selectedAnswer == 1 || selectedAnswer == 2)
@@ -354,8 +357,8 @@ choice.addEventListener("click", (e) => {
   }
 
   function addClassLastText() {
-    const hiddenContainer3 = document.querySelectorAll(".choice-container");
-    hiddenContainer3.forEach(function (item) {
+    const hiddenContainer5 = document.querySelectorAll(".choice-container");
+    hiddenContainer5.forEach(function (item) {
       if (
         currentQuestion.answer == 10 &&
         (selectedAnswer == 1 || selectedAnswer == 2)
@@ -453,6 +456,8 @@ function hideButton3(){
       mladStar++;
       createButton1 ()
       createButton2 ()
+      // chosenAnswer.classList.add("hokusPokus");
+      console.log(chosenAnswer);
     }
     if (currentQuestion.answer == 1 && selectedAnswer == 2) {
       kler++;

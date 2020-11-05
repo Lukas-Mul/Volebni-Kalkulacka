@@ -1,3 +1,8 @@
+@font-face {
+  src: url(fonts/HKGrotesk-SemiBold.otf);
+  font-family: "HKGrotesk-SemiBold";
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -31,9 +36,10 @@
   cursor: pointer;
   border-radius: 10px;
   outline: none;
+  font-family: "HKGrotesk-SemiBold";
 }
 
 #myBtn:hover {
-  background: rgb(236, 195, 141);
+  background: white;
   color: black;
 }
