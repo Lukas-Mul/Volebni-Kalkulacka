@@ -258,6 +258,7 @@ questionCounter++
 progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
 
+
 currentQuestion = availableQuestions[0];
 question.innerText = currentQuestion.question; //ta question na leve strane znaci ten div s tou otazkou. priradim k ni innerText, ktery si js najde tak, ze pujde podle currentQuestion a vezme si property question z te currentQuestion.
 choices.forEach((choice) => {
@@ -269,8 +270,6 @@ acceptingAnswers = true; //tohle umozni odpovidat na otazky az tehdy, kdyz bylo 
 };
 
 
-
-
 // DOSTAT NOVOU OTAZKU A POCITANI BODU
 choices.forEach((choice) => {
 choice.addEventListener("click", (e) => {
@@ -280,7 +279,7 @@ choice.addEventListener("click", (e) => {
   acceptingAnswers = false; // tohle vytvori male zpozdeni, nechceme, aby na to hned kliknuli
   const selectedChoice = e.target; //timhle vyselektuju volbu, na kterou klikli
   const selectedAnswer = selectedChoice.dataset["number"]; //timhle vyselektuju odpoved, kterou ta zvolena odpoved ma
-  
+
   // FUNKCE removeClassHidden - odstrani class hidden
   function removeClassHidden() {
     const hiddenContainer = document.querySelectorAll(".hidden");
@@ -317,8 +316,6 @@ choice.addEventListener("click", (e) => {
       }
     });
   }
-
-
 
   function addClassLastQuestion() {
     const hiddenContainer3 = document.querySelectorAll("#last-answer");
@@ -378,8 +375,7 @@ choice.addEventListener("click", (e) => {
     button1.addEventListener("click", function(){
       // add class hidden na overlay element, takze kliknutim se tam ten overlay element zobrazi a udela vsechno ostatni tmavym
       overlay.classList.remove("hidden11");
-      // remove class hidden na tu vysvetlivku - oddela hidden class od te vysvetlivky, takze ta se zobrazi
-      explanation1.classList.remove("hidden5");
+      explanation1Flex.classList.add("translate");
       
     })
   }
@@ -392,8 +388,10 @@ choice.addEventListener("click", (e) => {
     button2.innerText = "ZPĚT"
     explanation1Flex.appendChild(button2)
     button2.addEventListener("click", function(){
-      explanation1.classList.add("hidden5");
       overlay.classList.add("hidden11");
+      explanation1Flex.classList.remove("translate");
+
+
     })
   }
 
@@ -410,10 +408,9 @@ function createButton3 (){
   button3.innerText = "ZJISTIT VÍC"
   questionContainer.appendChild(button3)
   button3.addEventListener("click", function(){
-    // add class hidden na vsechno ostatni
     overlay.classList.remove("hidden11");
-    // remove class hidden na tu vysvetlivku
-    explanation2.classList.remove("hidden7");
+    explanation2Flex.classList.add("translate");
+
   
   })
 }
@@ -426,7 +423,7 @@ function createButton4 (){
   button4.innerText = "ZPĚT"
   explanation2Flex.appendChild(button4)
   button4.addEventListener("click", function(){
-    explanation2.classList.add("hidden7");
+    explanation2Flex.classList.remove("translate");
     overlay.classList.add("hidden11");
   })
 }
@@ -437,9 +434,7 @@ function hideButton3(){
     oznaceniButton3.classList.add("hideButton3");;
 }
 
-
-
-  // FUNKCE countPoints - Pocitani bodu
+// FUNKCE countPoints - Pocitani bodu
   function countPoints() {
     // OTAZKA 0
     if (currentQuestion.answer == 0 && selectedAnswer == 1) {
@@ -456,8 +451,6 @@ function hideButton3(){
       mladStar++;
       createButton1 ()
       createButton2 ()
-      // chosenAnswer.classList.add("hokusPokus");
-      console.log(chosenAnswer);
     }
     if (currentQuestion.answer == 1 && selectedAnswer == 2) {
       kler++;
@@ -481,13 +474,11 @@ function hideButton3(){
     if (currentQuestion.answer == 3 && selectedAnswer == 1) {
       cstpd++;
       mladStar++;
-      // hideButton1()
     }
     if (currentQuestion.answer == 3 && selectedAnswer == 2) {
       kler++;
       cssd++;
       agr++;
-      
     }
     // OTAZKA 4
     if (currentQuestion.answer == 4 && selectedAnswer == 1) {
@@ -562,47 +553,44 @@ function hideButton3(){
       cstpd++;
       addClassLastQuestion();
       removeClassHidden();
-      addClassLastAnswer()
-      addClassLastText()
-      addClassLastQuestion1()
-      // resetButton.classList.add("hidden4")
+      addClassLastAnswer();
+      addClassLastText();
+      addClassLastQuestion1();
     }
     if (currentQuestion.answer == 10 && selectedAnswer == 2) {
       kler++;
       mladStar++;
       addClassLastQuestion();
       removeClassHidden();
-      addClassLastAnswer()
-      addClassLastText()
-      addClassLastQuestion1()
-      // resetButton.classList.add("hidden4")
-
+      addClassLastAnswer();
+      addClassLastText();
+      addClassLastQuestion1();
     }
     // OTAZKA 11
     if (currentQuestion.answer == 11 && selectedAnswer == 1) {
       cssd++;
       removeClassHidden2();
-      addClassHidden3()
+      addClassHidden3();
     }
     if (currentQuestion.answer == 11 && selectedAnswer == 2) {
       cstpd++;
       removeClassHidden2();
-      addClassHidden3()
+      addClassHidden3();
     }
     if (currentQuestion.answer == 11 && selectedAnswer == 3) {
       agr++;
       removeClassHidden2();
-      addClassHidden3()
+      addClassHidden3();
     }
     if (currentQuestion.answer == 11 && selectedAnswer == 4) {
       mladStar++;
       removeClassHidden2();
-      addClassHidden3()
+      addClassHidden3();
     }
     if (currentQuestion.answer == 11 && selectedAnswer == 5) {
       kler++;
       removeClassHidden2();
-      addClassHidden3()
+      addClassHidden3();
     }
   }
   countPoints();
@@ -686,7 +674,6 @@ function firstPartyToSee(){
 }
 firstPartyToSee();
 
-
 //Switch color of active link
 party.forEach(function (item) {
   item.addEventListener("click", function (e) {
@@ -695,10 +682,6 @@ party.forEach(function (item) {
   });
 });
 
-
-
-
-    
 function clickOnDiv(){
 allDivs.forEach((something) => {
 something.addEventListener("click", (e) => {

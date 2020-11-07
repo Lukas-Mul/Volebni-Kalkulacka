@@ -1,5 +1,6 @@
 const timeoutSign = document.querySelector(".timeoutSign");
 const questionContainer = document.querySelector(".question-container");
+const questionContainerMuz = document.querySelector(".question-container-muz");
 const restartDiv = document.querySelector(".restartDiv");
 const continueDiv = document.querySelector(".continue");
 
@@ -93,6 +94,7 @@ restartDiv.appendChild(resetButtonDiv);
 resetButtonDiv.addEventListener("click", function() {
     return window.location.assign("./index.html");
 });
+
 
 // TLACITKO "ANO", PRO POKRACOVANI PO NECINNOSTI
 const continueButton = document.createElement("button")
