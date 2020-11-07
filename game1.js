@@ -73,6 +73,7 @@ const partiesContainerDiv = document.querySelector(".parties-container");
 const lastResetButtonDiv = document.querySelector(".lastResetButtonDiv");
 
 const chosenAnswer = document.querySelectorAll(".choice-container");
+const answerContainer = document.querySelector(".answer-container")
 
 
 // VARIABLES
@@ -89,12 +90,6 @@ let agr = 0;
 let kler = 0;
 let mladStar = 0;
 let cstpd = 0;
-
-// const parties = [
-//   {
-
-//   }
-// ]
 
 // OTAZKY - TEXT
 let questions = [
@@ -199,7 +194,6 @@ let questions = [
   answer: 11,
 },
 ];
-
 
 // RESETBUTTON vpravo nahore
 const resetButton = document.createElement("button")
@@ -433,6 +427,15 @@ function hideButton3(){
   let oznaceniButton3 = document.querySelector(".button3");
     oznaceniButton3.classList.add("hideButton3");;
 }
+
+function slideAway(){
+  answerContainer.addEventListener("mouseup", function(){
+    questionContainer.classList.toggle("slide");
+    console.log('slide');
+  })
+}
+
+slideAway();
 
 // FUNKCE countPoints - Pocitani bodu
   function countPoints() {

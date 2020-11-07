@@ -15,6 +15,10 @@
   src: url(fonts/bodoni\ italic\ bt.ttf);
   font-family: "bodoniItalicBt";
 }
+@font-face {
+  src: url(fonts/Bodoni\ Roman\ font.ttf);
+  font-family: "bodoniRoman";
+}
 
 /* intro */
 :root {
@@ -508,7 +512,7 @@ a {
   font-weight: 500;
   text-align: left;
   padding-left: 10%;
-  font-family: "HKGrotesk-Regular";
+  font-family: "HKGrotesk-SemiBold";
 }
 
 .restartDiv *:active {
