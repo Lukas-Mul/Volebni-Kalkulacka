@@ -62,7 +62,6 @@ a {
   box-shadow: inset 0px 0px 20px 2px black;
   border: black 1px solid;
   background-color: #a30f19;
-  transform: translate(-100%, -100%) scale(0);
 }
 
 .container-intro-href:last-child {
