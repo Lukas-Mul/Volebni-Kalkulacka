@@ -19,6 +19,10 @@
   src: url(fonts/Bodoni\ Roman\ font.ttf);
   font-family: "bodoniRoman";
 }
+@font-face {
+  src: url(fonts/LibreBodoni-Regular.ttf);
+  font-family: "BodoniLibre";
+}
 
 /* intro */
 :root {
@@ -91,7 +95,7 @@ a {
 
 .text-container .title {
   font-size: 48pt;
-  font-family: "bodoniRegular";
+  font-family: "BodoniLibre";
 }
 
 .text-container .start {
@@ -146,19 +150,19 @@ a {
   padding-top: 0.6rem;
   margin-top: 5rem;
   font-size: 36pt;
-  font-family: "bodoniRegular";
+  font-family: "BodoniLibre";
 }
 
 .sorryYouCantVote {
   padding-top: 5%;
   font-size: 36pt;
-  font-family: "bodoniRegular";
+  font-family: "BodoniLibre";
 }
 
 .youCanVote {
   padding-top: 5%;
   font-size: 36pt;
-  font-family: "bodoniRegular";
+  font-family: "BodoniLibre";
 }
 
 .answer-container {
@@ -306,7 +310,7 @@ a {
 
 .youSupport {
   font-size: 36pt;
-  font-family: "bodoniRegular";
+  font-family: "BodoniLibre";
 }
 
 .parties-container {
@@ -465,7 +469,7 @@ a {
   top: 12%;
   left: 7%;
   font-size: 36pt;
-  font-family: "bodoniRegular";
+  font-family: "BodoniLibre";
 }
 
 .timer {
