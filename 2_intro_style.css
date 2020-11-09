@@ -154,13 +154,15 @@ a {
 }
 
 .sorryYouCantVote {
-  padding-top: 5%;
+  padding-top: 0.6rem;
+  margin-top: 5rem;
   font-size: 36pt;
   font-family: "BodoniLibre";
 }
 
 .youCanVote {
-  padding-top: 5%;
+  padding-top: 0.6rem;
+  margin-top: 5rem;
   font-size: 36pt;
   font-family: "BodoniLibre";
 }
