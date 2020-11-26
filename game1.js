@@ -652,26 +652,26 @@ slideAway();
 function firstPartyToSee(){
   if(allDivs[0].innerHTML.indexOf("KLERIKÁLNÍ STRANA") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Klerikální strany</p><br> Katolické, nebo obecněji klerikální strany vznikly v 90. letech 19. století.  Dělily se na dva tábory: katolicko-národní a křesťanskosociální. První ze zmíněných existoval nějakou dobu u staročechů, a v roce 1897 byla založena Národní strana katolická v Království českém. Druhá větev se vyvíjela spíše v rámci občanské společnosti, a roku 1894 vznikla Křesťansko-sociální strana v Čechách. Katolíci byli loajální k monarchii a měli jasně austroslavistická stanoviska, kterých se drželi i během války. Katolické strany velmi konzervativní, odmítaly ženské hnutí, a společnost vnímaly jako stavovskou. Socialismus i liberalismus pak zavrhovali jako škodlivé pro systém.";
-    partiesContainerDiv.style.backgroundColor = "green"
+    partiesContainerDiv.style.backgroundImage = "url(img/Klerikalove.jpg";
   } 
   if(allDivs[0].innerHTML.indexOf("KOALICE MLADOČECHŮ A STAROČECHŮ") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Koalice Mladočechů a Staročechů</p><br> <p>Mladočeši</p><p>Národní strana svobodomyslná, zkráceně Mladočeši, byla politickou stranou působící v českých zemích Rakouska-Uherska. Vznikla na konci roku 1874, po dlouhotrvajících sporech v Národní straně. Mladočeši hlásali zároveň český národní a zároveň liberální program. Na přelomu 19. a 20. století získala dominantní postavení v rámci českého politického spektra, a působili v ní například Karel Kramář, Alois Rašín nebo Miloslav Tyrš.</p><br><p>Staročeši</p> Národní strana byla první politickou stranou v českých zemích. Vznikla v roce 1848, ale po vzniku Mladočechů začala ztrácet vliv. Nejprve se jednalo o občanskou iniciativu, rozvinula se až po pádu Bachova absolutismu roku 1859. V rámci této strany se nacházela rozličná politická a ideová uskupení, v roce 1863 vzniklo mladočeské křídlo. Mezi lety 1863 a 1891 byla Národní strana částečně zastoupena v Říšské radě. Poté byla strana činná především na komunální úrovni, od roku 1890 však neměla žádný větší vliv na politiku.";
-    partiesContainerDiv.style.backgroundColor = "blue"
+    partiesContainerDiv.style.backgroundImage = "url(img/MladStar.jpg";
 
   }
   if(allDivs[0].innerHTML.indexOf("ČESKOSLOVANSKÁ STRANA SOCIÁLNĚ DEMOKRATICKÁ") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Českoslovanská strana sociálně demokratická</p><br> Českoslovanská strana sociálně demokratická dělnická vznikla v roce 1893 v Českých Budějovicích, kdy se osamostatnila vůči rakouským socialistům. O 4 roky později již byla strana zastoupena v říšské radě, a roku 1897 v ní učinilo pět sociálně demokratických poslanců prohlášení, které vedlo ke vzniku ČSNS. Programově prosazovala uznání osmihodinové pracovní doby, všeobecné volební právo a spravedlivé mzdy. Ve volbách do Říšské rady 1907 strana poprvé kandidovala mimo rámec rakouské sociální demokracie. V českých zemích zvítězila, avšak po přepočtení na kurie skončila až za agrární stranou. Během první světové války strana odmítala odbojovou činnost a byla loajální k Rakousku-Uhersku, avšak ke konci války se levé křídlo strany podílelo na protiválečných demonstracích.";
-    partiesContainerDiv.style.backgroundColor = "purple";
+    partiesContainerDiv.style.backgroundImage = "url(img/SocDem.jpg";
 
   }
   if(allDivs[0].innerHTML.indexOf("AGRÁRNÍCI") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Agrárníci</p><br> Jedna z nejvýznamnějších stran první republiky byla založena 6. ledna 1899 pod názvem Česká strana agrární, mezi zakládající osobnosti patřili Karel Prášek a Stanislav Kubr. Agrárníci se hlásili k národním tradicím, jejich snahou bylo oslabovat centralismus a rozšiřovat působnost sněmů Koruny české. Hlavním cílem agrárníků však bylo hájit zájmy rolnictva, i za cenu pragmatického přístupu v politice.";
-    partiesContainerDiv.style.backgroundColor = "brown";
+    partiesContainerDiv.style.backgroundImage = "url(img/Agrarnici.jpg";
 
   }
   if(allDivs[0].innerHTML.indexOf("ČESKÁ STÁTOPRÁVNÍ DEMOKRACIE") !== -1) {
     changingPartiesDiv.innerHTML = "<p>Česká státopravní demokracie</p><br> Státoprávní strana vznikla jako odštěpené křídlo pokrokové strany v roce 1894. Mezi čelní představitele této strany patřil budoucí prvorepublikový ministr financí Alois Rašín. Strana měla od začátku podporu především středních vrstev, intelektuálů a vysokoškolských studentů, ale někdy i dělníků. Kromě státoprávního křídla vzniklo také křídlo přirozenoprávní, dělnicko-pokrokové a anarchistické. Nebyla zcela jasně ideologicky vymezena a komunikovala s jinými stranami, levicovými i pravicovými. V prvních všeobecných volbách roku 1907 získali státoprávníci sedm mandátů.";
-    partiesContainerDiv.style.backgroundColor = "black";
+    partiesContainerDiv.style.backgroundImage = "url(img/Cstpd.jpg";
 
   }
 }
@@ -695,23 +695,24 @@ something.addEventListener("mousedown", (e) => {
   function changeBackground(){
     if(selectedDiv.innerHTML.indexOf("KLERIKÁLNÍ STRANA") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Klerikální strany</p><br> Katolické, nebo obecněji klerikální strany vznikly v 90. letech 19. století.  Dělily se na dva tábory: katolicko-národní a křesťanskosociální. První ze zmíněných existoval nějakou dobu u staročechů, a v roce 1897 byla založena Národní strana katolická v Království českém. Druhá větev se vyvíjela spíše v rámci občanské společnosti, a roku 1894 vznikla Křesťansko-sociální strana v Čechách. Katolíci byli loajální k monarchii a měli jasně austroslavistická stanoviska, kterých se drželi i během války. Katolické strany velmi konzervativní, odmítaly ženské hnutí, a společnost vnímaly jako stavovskou. Socialismus i liberalismus pak zavrhovali jako škodlivé pro systém.";
-      partiesContainerDiv.style.backgroundColor = "green";
+      partiesContainerDiv.style.backgroundImage = "url(img/Klerikalove.jpg";
+      // partiesContainerDiv.classList.add("backgroundImage");
     }
     if(selectedDiv.innerHTML.indexOf("KOALICE MLADOČECHŮ A STAROČECHŮ") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Koalice Mladočechů a Staročechů</p><br> <p>Mladočeši</p><p>Národní strana svobodomyslná, zkráceně Mladočeši, byla politickou stranou působící v českých zemích Rakouska-Uherska. Vznikla na konci roku 1874, po dlouhotrvajících sporech v Národní straně. Mladočeši hlásali zároveň český národní a zároveň liberální program. Na přelomu 19. a 20. století získala dominantní postavení v rámci českého politického spektra, a působili v ní například Karel Kramář, Alois Rašín nebo Miloslav Tyrš.</p><br><p>Staročeši</p> Národní strana byla první politickou stranou v českých zemích. Vznikla v roce 1848, ale po vzniku Mladočechů začala ztrácet vliv. Nejprve se jednalo o občanskou iniciativu, rozvinula se až po pádu Bachova absolutismu roku 1859. V rámci této strany se nacházela rozličná politická a ideová uskupení, v roce 1863 vzniklo mladočeské křídlo. Mezi lety 1863 a 1891 byla Národní strana částečně zastoupena v Říšské radě. Poté byla strana činná především na komunální úrovni, od roku 1890 však neměla žádný větší vliv na politiku.";
-      partiesContainerDiv.style.backgroundColor = "blue";
+      partiesContainerDiv.style.backgroundImage = "url(img/MladStar.jpg";
     }
     if(selectedDiv.innerHTML.indexOf("ČESKOSLOVANSKÁ STRANA SOCIÁLNĚ DEMOKRATICKÁ") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Českoslovanská strana sociálně demokratická</p><br> Českoslovanská strana sociálně demokratická dělnická vznikla v roce 1893 v Českých Budějovicích, kdy se osamostatnila vůči rakouským socialistům. O 4 roky později již byla strana zastoupena v říšské radě, a roku 1897 v ní učinilo pět sociálně demokratických poslanců prohlášení, které vedlo ke vzniku ČSNS. Programově prosazovala uznání osmihodinové pracovní doby, všeobecné volební právo a spravedlivé mzdy. Ve volbách do Říšské rady 1907 strana poprvé kandidovala mimo rámec rakouské sociální demokracie. V českých zemích zvítězila, avšak po přepočtení na kurie skončila až za agrární stranou. Během první světové války strana odmítala odbojovou činnost a byla loajální k Rakousku-Uhersku, avšak ke konci války se levé křídlo strany podílelo na protiválečných demonstracích.";
-      partiesContainerDiv.style.backgroundColor = "purple";
+      partiesContainerDiv.style.backgroundImage = "url(img/SocDem.jpg";
     }
     if(selectedDiv.innerHTML.indexOf("AGRÁRNÍCI") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Agrárníci</p><br> Jedna z nejvýznamnějších stran první republiky byla založena 6. ledna 1899 pod názvem Česká strana agrární, mezi zakládající osobnosti patřili Karel Prášek a Stanislav Kubr. Agrárníci se hlásili k národním tradicím, jejich snahou bylo oslabovat centralismus a rozšiřovat působnost sněmů Koruny české. Hlavním cílem agrárníků však bylo hájit zájmy rolnictva, i za cenu pragmatického přístupu v politice.";
-      partiesContainerDiv.style.backgroundColor = "brown";
+      partiesContainerDiv.style.backgroundImage = "url(img/Agrarnici.jpg";
     }
     if(selectedDiv.innerHTML.indexOf("ČESKÁ STÁTOPRÁVNÍ DEMOKRACIE") !== -1) {
       changingPartiesDiv.innerHTML = "<p>Česká státopravní demokracie</p><br> Státoprávní strana vznikla jako odštěpené křídlo pokrokové strany v roce 1894. Mezi čelní představitele této strany patřil budoucí prvorepublikový ministr financí Alois Rašín. Strana měla od začátku podporu především středních vrstev, intelektuálů a vysokoškolských studentů, ale někdy i dělníků. Kromě státoprávního křídla vzniklo také křídlo přirozenoprávní, dělnicko-pokrokové a anarchistické. Nebyla zcela jasně ideologicky vymezena a komunikovala s jinými stranami, levicovými i pravicovými. V prvních všeobecných volbách roku 1907 získali státoprávníci sedm mandátů.";
-      partiesContainerDiv.style.backgroundColor = "black";
+      partiesContainerDiv.style.backgroundImage = "url(img/Cstpd.jpg";
     }
   }
 
