@@ -14,10 +14,8 @@
         </div>
         <div class="answer-container-blue">
         <div class="choice-container">
-          <a href="./game1.html">
             <p class="choice-text choice-text-next">DÁLE</p>
-          </a> 
-      </div>
+        </div>
       </div>
       
       <div id="overlay" class="hidden11"></div>    
@@ -34,6 +32,11 @@
       <script src="./gameGender.js"></script>
       <script type="text/javascript">
         resetButton.classList.add("hidden");
+
+        const choiceNext = document.querySelector(".choice-text-next");
+      choiceNext.addEventListener("click", function() {
+        return window.location.assign("./game1.html");
+      });
         </script>
 </body>
 </html>

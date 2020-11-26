@@ -8,25 +8,38 @@
   </head>
   <body>
     <div class="container-intro">
-      
-      <div class="container-intro-href">
-          <a href="./1_video.html">
+      <div class="container-intro-href czechVersion">
             <div class="text-container">
               <div class="title">VOLEBNÍ KALKULAČKA 1907</div>
               <div class="start">Spustit</div>
               <div class="lang-icon">CZ</div>
             </div>
-          </a>
       </div>
 
-      <div class="container-intro-href">
-          <a href="./1_video.html">
+      <div class="container-intro-href englishVersion">
             <div class="text-container">
             <div class="title">ELECTION CALCULATOR 1907</div>
             <div class="start">Start</div>
             <div class="lang-icon">EN</div>
             </div>
-          </a>
       </div>
     </div>
+
+    
+    <script type="text/javascript">
+      const czechButton = document.querySelector(".czechVersion");
+      czechButton.addEventListener("click", function() {
+        return window.location.assign("./1_video.html");
+      });
+
+      const englishButton = document.querySelector(".englishVersion")
+      englishButton.addEventListener("click", function() {
+        return window.location.assign("./1_video.html");
+      });
+      
+      
+    </script>
+  </body>    
 </html>
+
+

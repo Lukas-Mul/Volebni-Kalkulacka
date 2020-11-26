@@ -679,7 +679,7 @@ firstPartyToSee();
 
 //Switch color of active link
 party.forEach(function (item) {
-  item.addEventListener("click", function (e) {
+  item.addEventListener("mousedown", function (e) {
     partiesContainerDiv.querySelector(".current").classList.remove("current");
     item.classList.add("current");
   });
@@ -687,7 +687,7 @@ party.forEach(function (item) {
 
 function clickOnDiv(){
 allDivs.forEach((something) => {
-something.addEventListener("click", (e) => {
+something.addEventListener("mousedown", (e) => {
   
   const selectedDiv = e.target; 
   // const selectedNumberDiv = selectedDiv.dataset["number"]; 

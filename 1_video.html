@@ -4,37 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="1_video_style.css" />
-    <title>VIDEO - Pomožme slepicím</title>
+    <link rel="stylesheet" href="2_intro_style.css">
+    <title>VIDEO</title>
   </head>
   <body>
-    
-        <video autoplay="autoplay" class="video" id="video" src="./video.mp4"></video>
-     
 
+    <video autoplay="autoplay" class="video" id="video" src="./video.mp4"></video>
+     
     <div class="content">
-            <button id="myBtn" onclick="replay()">REPLAY</button>
-            <button id="myBtn" onclick="skip()">SKIP</button>
+      <input id="btnReplay" onclick="replay()" type="image" src="./reply_01.png">
+      <input id="btnSkip" onclick="skip()" type="image" src="./skip_01.png">            
+      <div class="timeLineDiv">
+        <div class="timer1">60</div>
+        <div class="timeLine"></div>
+      </div>  
     </div>
 
 <script type="text/javascript">
-      let video = document.getElementById("video");
-      let btn = document.getElementById("myBtn");
+    // Variables
+      const video = document.getElementById("video");
+      const timeLine = document.querySelector(".timeLine")
+      let timeleft = 59;
 
-      function replay() {
-      video.currentTime = 0;
-      video.play();
-      }
+    // Timer
+     function time() {
+      video.addEventListener("play", function (){
+      let downloadTimer = setInterval(function(){
+        if(timeleft == 0){
+          clearInterval(downloadTimer);
+          document.querySelector(".timer1").innerHTML = "0";
+          } else {
+          document.querySelector(".timer1").innerHTML = timeleft;
+          }
+          timeleft -= 1;
+          timeLine.style.width = `${(1.56 * timeleft)}%`;
+      }, 1000);})};
       
+    // Calling fnc time
+      time();
+      
+      // Function replay
+      function replay() {
+        video.currentTime = 0;
+        video.play();
+        timeleft = 60;
+      };
+      
+      // Function skip
       function skip() {
-      video.currentTime = 1000;
-      video.play();
-      }
-
-      video.addEventListener("ended", function () {
-      location.href = "./game.html";
-
-    
+        video.currentTime = 1000;
+        video.play();
+      };
+      
+      // After video ends, go automatically to the next page
+      video.addEventListener("ended", function() {
+        location.href = "./game.html";    
       });
+
 </script>
   </body>
 </html>
