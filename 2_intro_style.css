@@ -320,7 +320,7 @@ a {
   padding-top: 0.6%;
   font-size: 28pt;
   font-family: "BodoniLibre";
-  padding-left: 48px;
+  padding-left: 52px;
 }
 
 .howItEnded {
@@ -328,7 +328,7 @@ a {
   left: 50%;
   top: 3%;
   padding-top: 0.6%;
-  padding-left: 48px;
+  padding-left: 52px;
   font-size: 28pt;
   font-family: "BodoniLibre";
 }
@@ -342,9 +342,7 @@ a {
   align-items: left;
   width: 50%;
   height: 43.5%;
-  /* text-align: left; */
   background-color: #b6111d;
-  /* justify-content: center; */
   padding-top: 0.5%;
   border: none;
 }
@@ -361,7 +359,7 @@ a {
   background-color: white;
   color: #b6111d;
   margin: 0.5%;
-  margin-left: 5%;
+  margin-left: 52px;
   cursor: grab;
   font-size: 16pt;
   line-height: 95%;
@@ -386,7 +384,7 @@ a {
   background-color: #2b447e;
   text-align: left;
   padding-top: 14.4px;
-  padding-left: 48px;
+  padding-left: 52px;
   padding-bottom: 10%;
 }
 
@@ -416,7 +414,7 @@ a {
   background-color: #b6111d;
   text-align: left;
   padding-top: 2%;
-  padding-left: 48px;
+  padding-left: 52px;
   border: none;
 }
 
